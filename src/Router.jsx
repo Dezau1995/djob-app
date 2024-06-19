@@ -13,11 +13,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <UserListPage />,
-        loader: () => axios.get(`https://jsonplaceholder.typicode.com/users`)
+        loader: () => axios.get(`https://jsonplaceholder.typicode.com/users`),
       },
       {
-        path: "/user-profile",
+        path: "/user-profile/:id",
         element: <UserProfilePage />,
+        loader: ({ params }) =>
+          axios.get(`https://jsonplaceholder.typicode.com/users/${params.id}`),
       },
       {
         path: "/album",

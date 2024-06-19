@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./userlistpage.css";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 function UserListPage() {
   const users = useLoaderData();
   const [todos, setTodos] = useState([]);
   const [albums, setAlbums] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(`https://jsonplaceholder.typicode.com/todos`).then((response) => {
@@ -31,13 +32,23 @@ function UserListPage() {
     return albums.filter((album) => album.userId === userId).length;
   };
 
+  const handleClick = (id) => {
+    navigate(`/user-profile/${id}`);
+  };
+
   return (
     <main>
       <h1>User List</h1>
       <section className="listing-user">
         {users.data.map((user) => (
           <div key={user.id}>
-            <p>{user.name}</p>
+            <p
+              role="presentation"
+              onClick={() => handleClick(user.id)}
+              onKeyDown={() => handleClick(user.id)}
+            >
+              {user.name}
+            </p>
             <p>Email : {user.email}</p>
             <Link to={`http://${user.website}`} target="_blank">
               Website : {user.website}
