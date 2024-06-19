@@ -22,8 +22,10 @@ const router = createBrowserRouter([
           axios.get(`https://jsonplaceholder.typicode.com/users/${params.id}`),
       },
       {
-        path: "/album",
+        path: "/album/:id",
         element: <AlbumPage />,
+        loader: ({ params }) =>
+          axios.get(`https://jsonplaceholder.typicode.com/albums/${params.id}`),
       },
     ],
   },

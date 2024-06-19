@@ -20,7 +20,6 @@ function UserListPage() {
       .get(`https://jsonplaceholder.typicode.com/albums`)
       .then((response) => {
         setAlbums(response.data);
-        console.log(response.data);
       });
   }, []);
 
