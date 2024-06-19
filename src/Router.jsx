@@ -1,3 +1,4 @@
+import axios from "axios";
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import UserListPage from "./Pages/UserList/UserListPage";
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <UserListPage />,
+        loader: () => axios.get(`https://jsonplaceholder.typicode.com/users`)
       },
       {
         path: "/user-profile",
