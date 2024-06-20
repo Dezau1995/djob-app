@@ -17,6 +17,7 @@ function AlbumPage() {
           (cover) => cover.albumId === album.data.id
         );
         setInfoAlbum(covers);
+        console.log(covers)
       });
   }, [album.data.id]);
 
@@ -33,9 +34,10 @@ function AlbumPage() {
       {infoAlbum.map((cover) => (
         <div key={cover.id}>
           <img
-            src={`https://via.placeholder.com/600/${cover.thumbnaiUrl}`}
+            src={cover.thumbnailUrl}
             alt="cover"
           />
+          <h2>{cover.title}</h2>
         </div>
       ))}
     </div>

@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import "./App.css";
+import "./reset.css";
 
 function App() {
   return (
