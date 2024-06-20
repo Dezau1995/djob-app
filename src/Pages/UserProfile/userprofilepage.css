@@ -1,0 +1,62 @@
+.display-user-profile{
+    height: 100vh;
+    button{
+        border: none;
+        border-radius: 5px;
+        padding: 0.25rem;
+        cursor: pointer;
+    }
+    button:nth-child(1){
+        margin: 0 1rem;
+    }
+}
+
+.display-user-infos{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+margin: 2rem 0;
+}
+
+.section-user-profile-infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 20vh;
+    button{
+        margin: 1rem 0;
+        animation: move-button 1s ease-in-out 0s infinite normal none; 
+    }
+}
+
+.display-albums-user{
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 0.5rem;
+    h2{
+        text-align: center;
+    }
+    li{
+        padding: 0.25rem 0;
+        cursor: pointer;
+        transition: all 1s ease-in-out;
+    }
+    li:hover{
+        text-shadow: 0 0 5px grey;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes move-button{
+    0% {
+        transform:  translate(0,0);
+    }
+    50% {
+        transform:  translate(0,-5px);
+    }
+    100% {
+        transform:  translate(0,0);
+    }
+}
+
+
