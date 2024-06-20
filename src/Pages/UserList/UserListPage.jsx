@@ -40,16 +40,16 @@ function UserListPage() {
       <h1>User List</h1>
       <section className="listing-user">
         {users.data.map((user) => (
-          <div key={user.id}>
-            <p
+          <div key={user.id} className="card-users">
+            <h2
               role="presentation"
               onClick={() => handleClick(user.id)}
               onKeyDown={() => handleClick(user.id)}
             >
               {user.name}
-            </p>
+            </h2>
             <p>Email : {user.email}</p>
-            <Link to={`http://${user.website}`} target="_blank">
+            <Link to={`http://${user.website}`} target="_blank" className="link">
               Website : {user.website}
             </Link>
             <p>Company : {user.company.name}</p>

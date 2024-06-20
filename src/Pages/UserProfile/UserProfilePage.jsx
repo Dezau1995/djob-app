@@ -26,11 +26,13 @@ function UserProfilePage() {
     <main>
       <button onClick={() => navigate("/")}>back</button>
       <h1>{user.data.name}</h1>
+      <section className="section-user-profile-infos">
       <p>{user.data.username}</p>
       <p>{user.data.email}</p>
-      <h3>My Albums : </h3>
+      </section>
+      <h2>My Albums : </h2>
       {albums.map((album) => (
-        <div key={album.id}>
+        <div key={album.id} className="display-users-albums">
           <p
             role="presentation"
             onClick={() => handleClick(album.id)}
