@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { useTheme } from "../../context/ThemeContext";
+import "./albumpage.css";
 
 function AlbumPage() {
   const album = useLoaderData();
   const [infoAlbum, setInfoAlbum] = useState([]);
+  const { theme } = useTheme();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,7 +20,7 @@ function AlbumPage() {
           (cover) => cover.albumId === album.data.id
         );
         setInfoAlbum(covers);
-        console.log(covers)
+        console.log(covers);
       });
   }, [album.data.id]);
 
@@ -26,21 +29,22 @@ function AlbumPage() {
   };
 
   return (
-    <div>
+    <main className={`display-album ${theme}`}>
       <button type="button" onClick={handleClick}>
         ←
       </button>
       <h1>{album.data.title}</h1>
-      {infoAlbum.map((cover) => (
-        <div key={cover.id}>
-          <img
-            src={cover.thumbnailUrl}
-            alt="cover"
-          />
-          <h2>{cover.title}</h2>
-        </div>
-      ))}
-    </div>
+      <section className="section-album-photo">
+        {infoAlbum.map((cover) => (
+          <div key={cover.id} className="display-cover">
+            {(
+              <img src={cover.thumbnailUrl} alt="cover" />
+            )}
+            <p>{cover.title}</p>
+          </div>
+        ))}
+      </section>
+    </main>
   );
 }
 

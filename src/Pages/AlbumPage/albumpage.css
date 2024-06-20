@@ -1,0 +1,34 @@
+.display-album {
+  button {
+    border: none;
+    border-radius: 5px;
+    margin: 0 1rem;
+  }
+  h1 {
+    margin: 1rem 0.25rem;
+  }
+}
+
+.section-album-photo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  .display-cover {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    align-items: center;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .section-album-photo {
+    .display-cover {
+      width: 40%;
+    }
+  }
+}
