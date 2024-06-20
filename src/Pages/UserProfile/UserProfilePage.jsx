@@ -15,7 +15,6 @@ function UserProfilePage() {
           (albums) => albums.userId === user.data.id
         );
         setAlbums(result);
-        console.log(result);
       });
   }, [user]);
 
@@ -29,6 +28,7 @@ function UserProfilePage() {
       <h1>{user.data.name}</h1>
       <p>{user.data.username}</p>
       <p>{user.data.email}</p>
+      <h3>My Albums : </h3>
       {albums.map((album) => (
         <div key={album.id}>
           <p
