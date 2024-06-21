@@ -1,9 +1,9 @@
 import axios from "axios";
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import UserListPage from "./pages/UserList/UserListPage";
-import UserProfilePage from "./pages/UserProfile/UserProfilePage";
-import AlbumPage from "./pages/AlbumPage/AlbumPage";
+import UserListPage from "./Pages/UserList/UserListPage";
+import UserProfilePage from "./Pages/UserProfile/UserProfilePage";
+import AlbumPage from "./Pages/AlbumPage/AlbumPage";
 
 const router = createBrowserRouter([
   {
