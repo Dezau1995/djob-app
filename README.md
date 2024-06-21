@@ -58,8 +58,8 @@
 <li>A link takes you back to the user list</li>
 </ul>
 
-<p>The album page:</p>
-<h3>A presentation of album data.</h3>
+<h3>The album page:</h3>
+<p>A presentation of album data.</p>
 
 <p>In the folder AlbumPage</p>
 <p>I had to map the album data to display thumbnails of the photos contained in the album.</p>
@@ -71,6 +71,8 @@
 <li>The thumbs of the photos contained in the album</li>
 <li>A link takes you back to the user's file.</li>
 </ul>
+
+<h3>Some More: </h3>
 
 <p>I decided to add some features on my own to show a little bit what I know.</p>
 <p>You will find a input in the User List Page, which allows you to search users by their names.</p>
