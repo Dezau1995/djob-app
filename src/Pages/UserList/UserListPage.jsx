@@ -52,7 +52,7 @@ function UserListPage() {
       <section className={`display-header-user-list ${theme}`}>
         <h1>User List</h1>
         <input
-          type="text"
+          type="search"
           placeholder="Search User"
           value={text}
           onChange={handleChange}
